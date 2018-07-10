@@ -1,0 +1,33 @@
+﻿{
+	"ConfigInfo": [
+		{
+			"Key": "LoginUIForm",
+			"Value": "Prefabs/UI/LoginUIForm"
+		},
+		{
+			"Key": "SelectHeroUIForm",
+			"Value": "Prefabs/UI/SelectHeroUIForm"
+		},
+		{
+			"Key": "HeroInfoUIForm",
+			"Value": "Prefabs/UI/HeroInfoUIForm"
+		},
+
+		{
+			"Key": "MajorCityUIForm",
+			"Value": "Prefabs/UI/MajorCItyUIForm"
+		},
+		{
+			"Key": "MarketUIForm",
+			"Value": "Prefabs/UI/MarketUIForm"
+		},
+		{
+			"Key": "ItemInfoUIForm",
+			"Value": "Prefabs/UI/ItemInfoUIForm"
+		},
+		{
+			"Key": "ConfirmForm",
+			"Value": "Prefabs/UI/ConfimForm"
+		}
+	]
+}
