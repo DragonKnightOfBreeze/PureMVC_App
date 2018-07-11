@@ -68,6 +68,7 @@ namespace PureMVC.Core {
 		/// <param name="modelFunc">the <c>FuncDelegate</c> of the <c>IModel</c></param>
 		/// <returns>the instance for this Singleton key </returns>
 		public static IModel GetInstance(Func<IModel> modelFunc){
+			
 			if (instance == null) {
 				instance = modelFunc();
 			}

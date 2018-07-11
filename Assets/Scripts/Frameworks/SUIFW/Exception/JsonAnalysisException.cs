@@ -24,6 +24,7 @@ namespace SUIFW {
 	///<summary>
 	///异常：Json解析异常
 	///</summary>
+	[Serializable]
 	public class JsonAnalysisException : Exception {
 		public JsonAnalysisException() : base() { }
 

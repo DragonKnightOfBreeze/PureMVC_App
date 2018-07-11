@@ -29,13 +29,17 @@ namespace PureMVCApp {
 	/// </summary>
 	public class StartUpApp : SimpleCommand {
 
-		private UserList userListObj = null;
+		private UserEmpInfo _UserEmpInfo = null;
 
 		public override void Execute(INotification notification){
-			userListObj = notification.Body as UserList;
-			if (userListObj != null) {
-				SendNotification(ProConsts.MSG_Not_InitUserLsitMediator,userListObj);
-			}
+			_UserEmpInfo = notification.Body as UserEmpInfo;
+			if (_UserEmpInfo == null)
+				return;
+
+			//初始化用户列表操作类
+			SendNotification(ProConsts.MSG_Not_InitUserListMediator, _UserEmpInfo.UserListObj);
+			//初始化用户窗体操作类
+			SendNotification(ProConsts.MSG_Not_InitUserFormMediator, _UserEmpInfo.UserFormObj);
 		}
 	}
 }

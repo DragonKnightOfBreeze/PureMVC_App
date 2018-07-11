@@ -32,7 +32,7 @@ namespace PureMVCApp {
 		//系统委托
 		//职责的分离
 		public Action NewUser;		//新建用户
-		public Action SelectUser;	//选择用户信息
+		//public Action SelectUser;	//选择用户信息
 		public Action DeleteUser;	//删除用户信息
 
 		//用户列表
@@ -55,6 +55,10 @@ namespace PureMVCApp {
 			//按钮事件的注册
 			Btn_New.onClick.AddListener(ClickBtn_New);
 			Btn_Delete.onClick.AddListener(ClickBtn_Delete);
+
+			//默认冻结删除按钮
+			FreezeBtn_Delete();
+			
 		}
 
 		/// <summary>
@@ -67,7 +71,7 @@ namespace PureMVCApp {
 			//克隆与显示列表信息
 			foreach (var userVO in userVOs) {
 				UserListItem item = CloneUserVOInfo();
-				item.DisplayUserListItem(userVO);
+				item.ShowUserListItem(userVO);
 				//加入集合保存
 				_UserListInfo.Add(item);
 			}

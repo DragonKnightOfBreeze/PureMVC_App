@@ -43,14 +43,22 @@ namespace PureMVCApp {
 		public string UserName {
 			get { return _FirstName + _LastName; }
 		}
+		public string FirstName {
+			set { _FirstName = value;}
+			get { return _FirstName; }
+		}
+		public string LastName {
+			set { _LastName = value;}
+			get { return _LastName; }
+		}
 		public PersonSex Sex { get; set; }
-		public string Department { get;  }
-		public string PhoneNum { get;  }
-		public string Email { get;  }
+		public string Department { get; set; }
+		public string PhoneNum { get; set; }
+		public string Email { get; set; }
 
 		//只读属性：有效性
 		public bool IsValid {
-			get { return !string.IsNullOrEmpty(UserName) && !string.IsNullOrEmpty(Department); }
+			get { return !string.IsNullOrWhiteSpace(UserName) && !string.IsNullOrWhiteSpace(Department); }
 		}
 
 
@@ -88,11 +96,9 @@ namespace PureMVCApp {
 			}
 			return false;
 		}
-		
 
-
-
-
-
+		public override int GetHashCode(){
+			return base.GetHashCode();
+		}
 	}
 }

@@ -30,8 +30,7 @@ namespace PureMVC.Patterns.Facade
     /// <seealso cref="PureMVC.Core.Model"/>
     /// <seealso cref="PureMVC.Core.View"/>
     /// <seealso cref="PureMVC.Core.Controller"/>
-    public class Facade: IFacade
-    {
+    public class Facade: IFacade {
         /// <summary>
         /// Constructor.
         /// </summary>
@@ -311,14 +310,13 @@ namespace PureMVC.Patterns.Facade
         protected IView view;
 
 	    /// <summary>Singleton instance</summary>
-	    //protected static IFacade instance;
+	    protected static IFacade instance;
 
-		//+++
-	    protected static volatile IFacade instance;
+		//+++更改
+	    //protected static volatile IFacade instance;
 
-		//+++
-		protected static readonly object staticSyncRoot = new object();
-
+		//+++添加
+		//protected static readonly object staticSyncRoot = new object();
 
         /// <summary>Message Constants</summary>
         protected const string Singleton_MSG = "Facade Singleton already constructed!";

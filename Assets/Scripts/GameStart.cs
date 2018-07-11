@@ -27,7 +27,7 @@ namespace PureMVCApp {
 	/// </summary>
 	public class GameStart : MonoBehaviour {
 
-		public UserList UserListObj;
+		public UserEmpInfo UserEmpInfoObj;
 
 		void Start(){
 			
@@ -36,8 +36,8 @@ namespace PureMVCApp {
 			//AppFacade appFacade = AppFacade.Instance as AppFacade;
 
 			//启动项目（发送一个消息）
-			if (appFacade != null && UserListObj != null) {
-				appFacade.SendNotification(ProConsts.MSG_Cmd_InitMediator,UserListObj);
+			if (UserEmpInfoObj != null) {
+				appFacade.SendNotification(ProConsts.MSG_Cmd_InitMediator,UserEmpInfoObj);
 			}
 
 		}

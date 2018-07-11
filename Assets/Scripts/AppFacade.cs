@@ -15,7 +15,7 @@
 
 using System;
 using System.Collections;
-using System.Collections.Generic;
+using System.Collections.Generic; 
 using PureMVC.Interfaces;
 using PureMVC.Patterns.Facade;
 using UnityEngine;
@@ -33,28 +33,27 @@ namespace PureMVCApp {
 
 		}
 
-		/// <summary>
-		/// PureMVC得到实例引用
-		///
-		/// 得到“单例”且“线程安全”的引用
-		/// 在父类中已经实现了“单例”引用
-		///
-		/// 这种写法真的可以吗？
-		/// </summary>
-		//TODO：直接使用会报StackOverFlow错误
-		public static IFacade Instance {
-			get {
-				if (Instance == null) {
-					//静态对象可以作为一个锁
-					lock (staticSyncRoot) {
-						if (instance == null) {
-							instance = new AppFacade();
-						}
-					}
-				}
-				return instance;
-			}
-		}
+		///// <summary>
+		///// PureMVC得到实例引用
+		/////
+		///// 得到“单例”且“线程安全”的引用
+		///// 在父类中已经实现了“单例”引用
+		/////
+		///// 这种写法真的可以吗？
+		///// </summary>
+		//public static IFacade Instance {
+		//	get {
+		//		if (instance == null) {
+		//			//静态对象可以作为一个锁
+		//			lock (staticSyncRoot) {
+		//				if (instance == null) {
+		//					instance = new AppFacade();
+		//				}
+		//			}
+		//		}
+		//		return instance;
+		//	}
+		//}
 
 		
 
@@ -72,6 +71,7 @@ namespace PureMVCApp {
 		protected override void InitializeView(){
 			base.InitializeView();
 			RegisterMediator(new UserListMediator());
+			RegisterMediator(new UserFormMediator());
 		}
 
 		/// <summary>
